@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ClockDisplay.Clock">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="Clock" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAABABAAAAAAAAAAAAAAAAAAAAAABAAAAQIA=</HashCode>
+      <FileName>Clock.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="hours" />
+      <Field Name="minutes" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ClockDisplay.Number">
+    <Position X="4.75" Y="1" Width="1.5" />
+    <Members>
+      <Method Name="Number" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAIAAAEAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Number.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
