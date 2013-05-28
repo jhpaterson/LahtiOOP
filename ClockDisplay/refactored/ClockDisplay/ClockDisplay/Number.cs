@@ -1,4 +1,6 @@
-﻿
+﻿using System;
+using System.Text;
+
 namespace ClockDisplay
 {
     /// <summary>
@@ -7,18 +9,31 @@ namespace ClockDisplay
     /// </summary>
     public class Number
     {
-        protected int limit;
-        protected int value;
+        private int limit;
+        private int value;
+        private string displayFormat;
 
-        public virtual int Limit
+        public int Limit
         {
             get { return limit; }
             set
             {
-                if ((value >= 0) && (value <= 100))
+                this.limit = value;
+                if (limit < 2)
+                    limit = 2;       // can't have limit < 2, limit=2 works for binary 
+
+                // calculate number of digits 
+                double log10 = Math.Log10((double)(limit - 1));    
+                int digits = (int)log10 + 1;     // casting double to int rounds down
+
+                // set custom format from number of digits
+                StringBuilder sb = new StringBuilder("{0:");
+                for (int i = 0; i < digits; i++)
                 {
-                    this.limit = value;
+                    sb.Append("0");
                 }
+                sb.Append("}");
+                displayFormat = sb.ToString();
             }
         }
 
@@ -51,22 +66,9 @@ namespace ClockDisplay
         /// returns the current value as a string 
         /// </summary>
         /// <returns>the current value</returns>
-        public virtual string GetDisplayValue()
+        public string GetDisplayValue()
         {
-            if (value < 10)
-            {
-                return string.Format("0{0}", value);
-            }
-            else if (value < 100)
-            {
-                return string.Format("{0}", value);
-            }
-            else
-            {
-                return "##";
-            }
-
-            //return string.Format("{0:00}", value);      // simpler solution using custom text format
+            return string.Format(displayFormat, value);
         }
 
         /// <summary>

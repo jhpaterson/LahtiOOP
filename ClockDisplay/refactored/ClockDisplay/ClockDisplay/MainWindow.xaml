@@ -1,0 +1,21 @@
+﻿<Window x:Class="ClockDisplay.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WPF Clock" Width="250" Height="150">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="00:00" Grid.Row="0" Margin="10,10,2,10" Padding="10" HorizontalAlignment="Center" 
+               Name="timeDisplay" FontSize="16" HorizontalContentAlignment="Center" 
+               Background="#FFD8EBC1" BorderBrush="Black" BorderThickness="2"  >   
+        </Label>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button  Margin="10,10,2,10" Padding="10,3,10,3" Name="button1" Click="button1_Click" FontStretch="Normal">Start</Button>
+            <Button  Margin="10,10,2,10" Padding="10,3,10,3" Name="button2" Click="button2_Click" FontStretch="Normal">Stop</Button>
+            <Button  Margin="10,10,2,10" Padding="10,3,10,3" Name="button3" Click="button3_Click" FontStretch="Normal">Reset</Button>
+        </StackPanel>
+    </Grid>
+</Window>
